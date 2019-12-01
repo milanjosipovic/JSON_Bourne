@@ -12,11 +12,13 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ComponentsComponent } from './components/components.component';
 import { HomeComponent } from './home/home.component';
+import { Component1Component } from './components/component1/component1.component';
 
 //Routes
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'ngComponents', component: ComponentsComponent},
+  { path: 'ngComponents/:component', component: Component1Component},
 ];
 
 @NgModule({
@@ -26,6 +28,7 @@ const appRoutes: Routes = [
     FooterComponent,
     ComponentsComponent,
     HomeComponent,
+    Component1Component,
     
   ],
   imports: [
