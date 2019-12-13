@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 // Import Swiper from node_modules
-import Swiper from '../../../node_modules/swiper/js/Swiper';
+import Swiper from '../../../node_modules/swiper/js/swiper';
 
 @Component({
   selector: 'app-home',
