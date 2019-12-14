@@ -1,0 +1,87 @@
+<!-- 
+    ========================TD forms===================================== 
+    -Add the ngModel directive to input elements to make angular aware.
+
+-->
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+        <h3>Enter All Fields And Submit The Form</h3>
+      <form #form="ngForm" (submit)="handleFormSubmit(form)">
+        <div class="form-group">
+          <label for="libraryName">Name</label>
+          <input
+            type="text"
+            name="libraryName"
+            id="libraryName"
+            ngModel
+            required
+            #libraryName="ngModel"
+            class="form-control"
+          />
+          <span *ngIf="!libraryName.valid && libraryName.touched">
+            Please Enter A Library Name</span>
+        </div>
+        <div class="form-group">
+          <label for="libraryURL">Library URL</label>
+          <input
+            type="url"
+            name="libraryURL"
+            id="libraryURL"
+            ngModel
+            required
+            #libraryURL="ngModel"
+            class="form-control"
+          />
+          <span *ngIf="!libraryURL.valid && libraryURL.touched">
+                Please Enter A URL</span>
+
+        </div>
+
+        <div class="form-group">
+          <label for="libraryDescription">Library Description</label>
+          <input
+            type="text"
+            id="libraryDescription"
+            name="libraryDescription"
+            ngModel
+            required
+            #libraryDescription="ngModel"
+            class="form-control"
+          />
+          <span *ngIf="!libraryDescription.valid && libraryDescription.touched">
+                Please Enter Description </span>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+                <ngb-panel *ngFor="let library of allLibraries">
+                <ng-template ngbPanelTitle>
+                    <h1>{{library.libraryName}} </h1>
+                </ng-template>
+                  <ng-template ngbPanelContent>
+                    <p>{{library.libraryDescription}}</p>
+                    <a [href]="library.libraryUrl">Url</a>
+                  </ng-template>
+                </ngb-panel>
+        </ngb-accordion>
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
